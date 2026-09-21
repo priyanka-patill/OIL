@@ -1,0 +1,58 @@
+{
+  "model_version": "sif_model_v1",
+  "project": "OIL SIF Precursor Detection Engine",
+  "model_type": "LogisticRegression (Balanced L2 Regularized)",
+  "feature_config_type": "Configuration A (Text Only TF-IDF)",
+  "target_col": "High_Potential_Near_Miss",
+  "training_records": 665,
+  "validation_records": 142,
+  "test_records": 143,
+  "random_state": 42,
+  "timestamp": "2026-09-16T17:26:24Z",
+  "validation_metrics": {
+    "accuracy": 0.9085,
+    "sif_precision": 0.5714,
+    "sif_recall": 0.5333,
+    "sif_f1": 0.5517,
+    "roc_auc": 0.8121,
+    "pr_auc": 0.4191,
+    "tp": 8,
+    "fp": 6,
+    "tn": 121,
+    "fn": 7,
+    "fn_rate": 0.4667,
+    "confusion_matrix": [
+      [
+        121,
+        6
+      ],
+      [
+        7,
+        8
+      ]
+    ]
+  },
+  "test_metrics": {
+    "accuracy": 0.9161,
+    "sif_precision": 0.5789,
+    "sif_recall": 0.7333,
+    "sif_f1": 0.6471,
+    "roc_auc": 0.9094,
+    "pr_auc": 0.7014,
+    "tp": 11,
+    "fp": 8,
+    "tn": 120,
+    "fn": 4,
+    "fn_rate": 0.2667,
+    "confusion_matrix": [
+      [
+        120,
+        8
+      ],
+      [
+        4,
+        11
+      ]
+    ]
+  }
+}

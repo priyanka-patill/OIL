@@ -1,0 +1,29 @@
+{
+  "text_features": [
+    "Near_Miss_Description"
+  ],
+  "categorical_features": [
+    "Refinery_Unit",
+    "Equipment_ID",
+    "Work_Type",
+    "Department"
+  ],
+  "numeric_features": [
+    "Previous_Similar_Reports"
+  ],
+  "boolean_features": [
+    "PPE_NonCompliance",
+    "Supervisor_Negligence",
+    "Maintenance_Delay_or_Issue",
+    "Repeated_Issue_Ignored"
+  ],
+  "excluded_features": [
+    "source_sheet",
+    "Near_Miss_ID",
+    "Potential_Consequence",
+    "Risk_Level",
+    "Corrective_Action",
+    "Action_Status",
+    "High_Potential_Near_Miss"
+  ]
+}

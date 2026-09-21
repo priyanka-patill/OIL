@@ -1,0 +1,14 @@
+model_name,test_accuracy,test_sif_precision_default,test_sif_recall_default,test_sif_f1_default,test_sif_precision_opt,test_sif_recall_opt,test_sif_f1_opt,test_roc_auc,test_pr_auc,test_fp,test_fn
+ConfigA_Text_LogisticRegression_Balanced,0.8182,0.3429,0.8,0.48,0.5789,0.7333,0.6471,0.9094,0.7014,23,3
+ConfigA_Text_LogisticRegression_Standard,0.8951,0.0,0.0,0.0,0.0,0.0,0.0,0.8589,0.6434,0,15
+ConfigA_Text_LinearSVC_Calibrated,0.9161,1.0,0.2,0.3333,1.0,0.0667,0.125,0.9411,0.7473,0,12
+ConfigA_Text_ComplementNB,0.7972,0.2308,0.4,0.2927,0.2632,0.3333,0.2941,0.6198,0.3842,20,9
+ConfigA_Text_RandomForest_Balanced,0.8741,0.4211,0.5333,0.4706,0.4286,0.4,0.4138,0.9276,0.4756,11,7
+ConfigB_Struct_LogisticRegression_Balanced,0.8881,0.4828,0.9333,0.6364,0.5,0.9333,0.6512,0.9344,0.5626,15,1
+ConfigB_Struct_LogisticRegression_Standard,0.9161,0.8,0.2667,0.4,0.6667,0.1333,0.2222,0.9328,0.5721,1,11
+ConfigB_Struct_LinearSVC_Calibrated,0.9161,0.8,0.2667,0.4,1.0,0.0667,0.125,0.9286,0.5402,1,11
+ConfigB_Struct_RandomForest_Balanced,0.8881,0.4667,0.4667,0.4667,0.5385,0.4667,0.5,0.9359,0.5117,8,8
+ConfigC_Comb_LogisticRegression_Balanced,0.8881,0.4828,0.9333,0.6364,0.5217,0.8,0.6316,0.9505,0.7199,15,1
+ConfigC_Comb_LogisticRegression_Standard,0.9231,0.75,0.4,0.5217,1.0,0.2,0.3333,0.9474,0.7073,2,9
+ConfigC_Comb_LinearSVC_Calibrated,0.9091,1.0,0.1333,0.2353,0.0,0.0,0.0,0.9339,0.6746,0,13
+ConfigC_Comb_RandomForest_Balanced,0.8881,0.4737,0.6,0.5294,0.4,0.4,0.4,0.9365,0.487,10,6

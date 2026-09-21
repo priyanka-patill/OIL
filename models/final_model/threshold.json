@@ -1,0 +1,5 @@
+{
+  "optimal_threshold": 0.6,
+  "default_threshold": 0.5,
+  "selection_method": "Validation set SIF F1 score maximization"
+}

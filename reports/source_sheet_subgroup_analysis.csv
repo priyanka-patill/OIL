@@ -1,0 +1,13 @@
+source_sheet,total_records,actual_sif,predicted_sif,actual_sif_rate,predicted_sif_rate
+01_Maintenance_Delay_or_Issue,11,0,0,0.0,0.0
+01_PPE_NonCompliance,10,0,0,0.0,0.0
+01_Repeated_Issue_Ignored,15,0,0,0.0,0.0
+01_Supervisor_Negligence,10,0,0,0.0,0.0
+05_2Factor_1,6,0,0,0.0,0.0
+05_2Factor_2,11,0,0,0.0,0.0
+05_2Factor_3,13,0,0,0.0,0.0
+08_3Factor_1,5,0,0,0.0,0.0
+08_3Factor_2,15,0,2,0.0,0.133
+08_3Factor_3,17,0,2,0.0,0.118
+11_4Factor_All,15,0,4,0.0,0.267
+12_High_Potential,15,15,11,1.0,0.733

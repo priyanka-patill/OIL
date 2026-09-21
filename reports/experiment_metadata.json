@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-09-16T17:15:05Z",
+  "dataset_path": "data/processed/cleaned_near_miss_dataset.parquet",
+  "total_records": 950,
+  "splits": {
+    "train": 665,
+    "validation": 142,
+    "test": 143
+  },
+  "target_col": "High_Potential_Near_Miss",
+  "excluded_features": [
+    "source_sheet",
+    "Near_Miss_ID",
+    "Potential_Consequence",
+    "Risk_Level",
+    "Corrective_Action",
+    "Action_Status",
+    "High_Potential_Near_Miss"
+  ],
+  "selected_candidate_model": "ConfigA_Text_LogisticRegression_Balanced",
+  "optimal_threshold": 0.6,
+  "test_metrics": {
+    "model_name": "ConfigA_Text_LogisticRegression_Balanced",
+    "test_accuracy": 0.8182,
+    "test_sif_precision_default": 0.3429,
+    "test_sif_recall_default": 0.8,
+    "test_sif_f1_default": 0.48,
+    "test_sif_precision_opt": 0.5789,
+    "test_sif_recall_opt": 0.7333,
+    "test_sif_f1_opt": 0.6471,
+    "test_roc_auc": 0.9094,
+    "test_pr_auc": 0.7014,
+    "test_fp": 23,
+    "test_fn": 3
+  }
+}
