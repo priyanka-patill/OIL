@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL || '/api';
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -21,9 +21,17 @@ apiClient.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Response interceptor: Standard error response extraction
+// Response interceptor: Standard error response extraction & HTML fallback detection
 apiClient.interceptors.response.use(
-  (response) => response.data,
+  (response) => {
+    // Detect HTML fallback response (e.g. index.html returned by static server when API URL is misconfigured)
+    if (typeof response.data === 'string' && (response.data.includes('<!DOCTYPE html>') || response.data.includes('<html'))) {
+      const err = new Error('Server returned HTML instead of API JSON response. Please ensure VITE_API_BASE_URL points to the backend API.');
+      err.status = 502;
+      return Promise.reject(err);
+    }
+    return response.data;
+  },
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem('oil_auth_token');

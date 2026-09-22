@@ -24,16 +24,23 @@ export const SignupPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
     setError('');
+    setSuccess(false);
     setIsSubmitting(true);
 
     try {
       const response = await signup(formData);
-      if (response?.success) {
+      const isSuccess = response?.success === true || (response && typeof response === 'object' && (response.id || response.data?.id));
+
+      if (isSuccess) {
         setSuccess(true);
         setTimeout(() => {
           navigate('/login');
         }, 1500);
+      } else {
+        throw new Error(response?.message || 'Registration failed. Please check your inputs.');
       }
     } catch (err) {
       setError(err.message || 'Registration failed. Please check inputs.');
