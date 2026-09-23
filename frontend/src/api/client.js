@@ -1,6 +1,18 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL || '/api';
+// Extract API base URL from environment variables or default to '/api'
+let rawBase = import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL || '';
+
+let getBaseUrl = () => {
+  if (!rawBase) return '/api';
+  let clean = rawBase.replace(/\/+$/, '');
+  if (!clean.endsWith('/api')) {
+    clean = `${clean}/api`;
+  }
+  return clean;
+};
+
+export const API_BASE_URL = getBaseUrl();
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -9,9 +21,13 @@ export const apiClient = axios.create({
   },
 });
 
-// Request interceptor: Attach Authorization Bearer token
+// Request interceptor: Sanitize duplicate /api/ prefix & Attach Authorization Bearer token
 apiClient.interceptors.request.use(
   (config) => {
+    // If the request URL starts with '/api/', strip the leading '/api' so it doesn't double up with baseURL ending in '/api'
+    if (config.url && config.url.startsWith('/api/')) {
+      config.url = config.url.replace(/^\/api/, '');
+    }
     const token = localStorage.getItem('oil_auth_token');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
@@ -44,3 +60,4 @@ apiClient.interceptors.response.use(
     return Promise.reject(new Error(message));
   }
 );
+

@@ -1,4 +1,4 @@
-import { apiClient } from './client';
+import { apiClient, API_BASE_URL } from './client';
 
 export const reportsApi = {
   getReports: async (params = {}) => {
@@ -50,14 +50,15 @@ export const reportsApi = {
   },
 
   getAttachmentDownloadUrl: (attachmentId) => {
-    return `/api/attachments/${attachmentId}/download`;
+    return `${API_BASE_URL}/attachments/${attachmentId}/download`;
   },
 
   getAttachmentPreviewUrl: (attachmentId) => {
-    return `/api/attachments/${attachmentId}/preview`;
+    return `${API_BASE_URL}/attachments/${attachmentId}/preview`;
   },
 
   deleteAttachment: async (attachmentId) => {
     return apiClient.delete(`/attachments/${attachmentId}`);
   },
 };
+
